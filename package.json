@@ -1,0 +1,29 @@
+{
+  "name": "react-next-github-btn",
+  "version": "1.2.0",
+  "description": "GitHub module button component for React.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tekkenthuuug/react-next-github-btn.git"
+  },
+  "keywords": [
+    "React",
+    "GitHub",
+    "button",
+    "module"
+  ],
+  "author": {
+    "name": "Maksim Pautsina",
+    "email": "sa.soto317@gmail.com"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tekkenthuuug/react-next-github-btn/issues"
+  },
+  "homepage": "https://github.com/tekkenthuuug/react-next-github-btn",
+  "dependencies": {
+    "github-buttons": "^2.8.0"
+  }
+}
