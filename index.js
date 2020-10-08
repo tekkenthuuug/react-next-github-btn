@@ -1,39 +1,47 @@
-const React, { PureComponent } = require('react')
+const React = require('react');
 
-class GitHubButton extends PureComponent {
-  constructor (props) {
-    super(props)
-    this.$ = React.createRef()
-    this._ = React.createRef()
+class GitHubButton extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.$ = React.createRef();
+    this._ = React.createRef();
   }
-  render () {
-    return React.createElement('span', { ref: this.$ }, React.createElement('a', { ...this.props, ref: this._ }, this.props.children))
+  render() {
+    return React.createElement(
+      'span',
+      { ref: this.$ },
+      React.createElement(
+        'a',
+        { ...this.props, ref: this._ },
+        this.props.children
+      )
+    );
   }
-  componentDidMount () {
-    this.paint()
+  componentDidMount() {
+    this.paint();
   }
-  getSnapshotBeforeUpdate () {
-    this.reset()
-    return null
+  getSnapshotBeforeUpdate() {
+    this.reset();
+    return null;
   }
-  componentDidUpdate () {
-    this.paint()
+  componentDidUpdate() {
+    this.paint();
   }
-  componentWillUnmount () {
-    this.reset()
+  componentWillUnmount() {
+    this.reset();
   }
-  paint () {
-    const _ = this.$.current.appendChild(document.createElement('span'))
+  paint() {
+    const _ = this.$.current.appendChild(document.createElement('span'));
     import(/* webpackMode: "eager" */ 'github-buttons').then(({ render }) => {
       render(_.appendChild(this._.current), function (el) {
         try {
-          _.parentNode.replaceChild(el, _)
+          _.parentNode.replaceChild(el, _);
         } catch (_) {}
-      })
-    })
+      });
+    });
   }
-  reset () {
-    this.$.current.replaceChild(this._.current, this.$.current.lastChild)
+  reset() {
+    this.$.current.replaceChild(this._.current, this.$.current.lastChild);
   }
 }
 
