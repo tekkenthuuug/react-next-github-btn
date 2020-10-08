@@ -18,5 +18,5 @@ import GitHubButton from 'react-next-github-btn';
 
 BSD 2-Clause License
 
-Copyright (c) 2020, なつき
+Copyright (c) 2020, [なつき](https://github.com/ntkme)
 All rights reserved.
